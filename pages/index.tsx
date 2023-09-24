@@ -1,7 +1,8 @@
-import {Component} from 'react'
+import {Component,ReactNode} from 'react'
 
 export default class Home extends Component{
-    render(){
+    public render(): ReactNode
+    {
         return <div> Hola </div>
     }
 }
