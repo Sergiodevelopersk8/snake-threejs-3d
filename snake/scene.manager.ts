@@ -1,4 +1,5 @@
 import { Camera, Color,HemisphereLight,PerspectiveCamera, Scene } from "three"
+import { Diorama } from "./classes/diorama";
 
 export class SceneManager
 {
@@ -11,6 +12,9 @@ public static init(): void
 SceneManager.createScene();
 SceneManager.createCamera();
 SceneManager.createLights();
+
+const diorama = new Diorama();
+diorama.start();
 
 }
 
