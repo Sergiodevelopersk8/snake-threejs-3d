@@ -1,21 +1,20 @@
-import { Diorama } from "../classes/diorama";
 import { GUIManager } from "../gui.manager";
 import { State } from "./state";
 
-export class MenuState extends State{
+export class CreditState extends State{
 
-public static diorama : Diorama
 
 
 public enter(): void{
-
-GUIManager.menuButtoms();
+    GUIManager.creditButtoms();
 
 }
 
 
 public exit(): void{
+
     GUIManager.clearButtoms();
+
 
 }
 

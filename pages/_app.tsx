@@ -1,4 +1,5 @@
 import '../styles/main.css'
+import '../styles/menu.css'
 
 import App from 'next/app'
 
