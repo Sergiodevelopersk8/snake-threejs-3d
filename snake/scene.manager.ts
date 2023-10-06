@@ -1,5 +1,8 @@
 import { Camera, Color,HemisphereLight,PerspectiveCamera, Scene } from "three"
 import { Diorama } from "./classes/diorama";
+import { MenuState } from "./states/menu.state";
+import { State } from "./states/state";
+import { States } from "./states/states";
 
 export class SceneManager
 {
@@ -12,9 +15,8 @@ public static init(): void
 SceneManager.createScene();
 SceneManager.createCamera();
 SceneManager.createLights();
+SceneManager.onReady();
 
-const diorama = new Diorama();
-diorama.start();
 
 }
 
@@ -46,5 +48,16 @@ SceneManager.scene.add(light);
 
 
 }
+
+private static onReady(): void{
+
+MenuState.diorama = new Diorama();
+State.setCurrent(States.menu);
+MenuState.diorama.start();
+
+
+}
+
+
 
 }
