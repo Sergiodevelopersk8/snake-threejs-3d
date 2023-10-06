@@ -27,7 +27,7 @@ height: 64vh;
     font-size: 22px;
 }
 
-#panel{
+#panel .text{
     position: absolute;
     top: 150px;
     left: 40vw;
