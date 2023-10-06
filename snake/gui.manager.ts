@@ -29,7 +29,18 @@ public static clearButtoms(): void{
     menu.textContent = '';
 }
 
-    
+ public static showHTML(id:string, style = 'block'):void{
+
+const element = document.getElementById(id); 
+element.style.display =style;
+}
+
+
+public static hideHTML(id:string, style = 'none'):void{
+    const element = document.getElementById(id); 
+    element.style.display =style;
+
+ }   
 
 
 }

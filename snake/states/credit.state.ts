@@ -7,13 +7,15 @@ export class CreditState extends State{
 
 public enter(): void{
     GUIManager.creditButtoms();
-
+    GUIManager.showHTML('panel');
+    
 }
 
 
 public exit(): void{
-
+    
     GUIManager.clearButtoms();
+    GUIManager.hideHTML('panel');
 
 
 }
