@@ -36,3 +36,40 @@ height: 64vh;
 }
 
 
+@media(max-width:1180px){
+    #panel{
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 100px;
+        padding-left: 20px;
+        padding-right:20px ;
+
+    }
+
+#panel img{
+    display: none;
+
+}
+
+#panel .title{
+    top:0;
+    left:0;
+    position: inherit;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+#panel .text{
+
+top: 0;
+left: 0;
+position: inherit;
+
+}
+
+
+}
+
+
