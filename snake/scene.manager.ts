@@ -1,10 +1,10 @@
 import { State } from "./states/state";
+import { States } from "./states/states";
 import { Camera, Color,HemisphereLight,PerspectiveCamera, Scene } from "three"
 import { Diorama } from "./classes/diorama";
 import { MenuState } from "./states/menu.state";
 import { GameState } from "./states/game.state";
 import { Game } from "./classes/game";
-import { States } from "./states/states";
 
 export class SceneManager
 {
