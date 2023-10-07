@@ -24,7 +24,8 @@ SceneManager.scene.add(this.grid);
 
 
 public dispose():void{
-
+this.grid.dispose();
+SceneManager.scene.remove(this.grid);
 }
 
 

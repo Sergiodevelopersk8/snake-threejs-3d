@@ -14,10 +14,14 @@ public input: Input = new Input;
 
 constructor()
 {
-document.addEventListener('keydown', this.handleKey.bind(this))
+    this.handleKey = this.handleKey.bind(this);
+document.addEventListener('keydown', this.handleKey)
 }
 
 private handleKey(e: KeyboardEvent): void{
+
+
+
 switch (e.key) {
     case 'w':
     this.input.up = true;
@@ -49,6 +53,11 @@ switch (e.key) {
 
     
 }
+}
+
+public dispose(): void
+{
+document.removeEventListener('keydown', this.handleKey);
 }
 
 

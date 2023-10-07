@@ -13,7 +13,7 @@ private z: number = 0
 private tail : Array<Mesh> = [] ;
 private InputManager:InputManager
 private time: number = 0;
-private cicle: number = 0.1;
+private cycle: number = 1;
 
 constructor(){
     this.start();
@@ -41,7 +41,7 @@ SceneManager.scene.add(this.head)
 public update(deltaTime):void{
 
 this.time += deltaTime;
-if(this.cicle < this.time){
+if(this.cycle < this.time){
     this.updatePosition();
     this.time = 0;
 }
@@ -61,6 +61,7 @@ public dispose():void{
 this.geometry.dispose();
 this.material.dispose();
 SceneManager.scene.remove(this.head);
+this.InputManager.dispose();
 }
 
 
