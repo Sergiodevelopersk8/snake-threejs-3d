@@ -1,6 +1,7 @@
 import { BoxGeometry, Mesh, MeshBasicMaterial, MeshStandardMaterial,Color } from "three";
 import { LifeCycle } from "../types/helpers";
 import { SceneManager } from "../scene.manager";
+import { InputManager } from "../input/keyboard";
 
 export class Snake implements LifeCycle{
 
@@ -9,7 +10,10 @@ private geometry: BoxGeometry
 private material: MeshStandardMaterial
 private x: number = 0 
 private z: number = 0
-private tail : Array<Mesh> = [] 
+private tail : Array<Mesh> = [] ;
+private InputManager:InputManager
+private time: number = 0;
+private cicle: number = 0.1;
 
 constructor(){
     this.start();
@@ -19,6 +23,7 @@ constructor(){
 
     public start():void{
 
+this.InputManager = new InputManager();        
 this.geometry = new BoxGeometry(1,1,1);
 this.material = new MeshStandardMaterial({
     color: new Color(0,0,1),
@@ -33,8 +38,22 @@ SceneManager.scene.add(this.head)
 
     }
 
-public update():void{
+public update(deltaTime):void{
 
+this.time += deltaTime;
+if(this.cicle < this.time){
+    this.updatePosition();
+    this.time = 0;
+}
+
+
+}
+private updatePosition(): void{
+if(this.InputManager.input.up) this.z +=1
+if(this.InputManager.input.down) this.z -=1
+if(this.InputManager.input.left) this.x +=1
+if(this.InputManager.input.right) this.x -=1
+this.head.position.set(this.x, 0, this.z);
 }
 
 

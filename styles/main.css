@@ -42,6 +42,7 @@ body{
     scale: 1.01;
     transition: 0.1s;
     color: aliceblue;
+    cursor: pointer;
 }
 
 
