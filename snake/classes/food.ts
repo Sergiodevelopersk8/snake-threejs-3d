@@ -42,6 +42,11 @@ public update():void{
 
 public dispose():void{
 
+    this.geometry.dispose();
+    this.material.dispose();
+    SceneManager.scene.remove(this.mesh);
+
+
 }
 
 

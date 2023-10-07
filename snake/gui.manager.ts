@@ -10,6 +10,13 @@ public static menuButtoms(): void{
     credit.innerHTML = 'CREDITOS';
     credit.onclick = () => State.setCurrent(States.credit);
     menu.appendChild(credit);
+
+    const game = document.createElement('button');
+    game.className = 'button';
+    game.innerHTML = 'JUGAR';
+    game.onclick = () => State.setCurrent(States.game);
+    menu.appendChild(game);
+
 }
 
 
