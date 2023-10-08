@@ -4,3 +4,11 @@ export interface LifeCycle{
     dispose: (...args: Array<any>) => void
 
 }
+
+export enum Directions
+{
+up = 'UP',
+down = 'DOWN',
+left = 'LEFT',
+right = 'RIGHT'
+}

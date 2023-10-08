@@ -1,13 +1,14 @@
 import { BoxGeometry, Mesh, MeshBasicMaterial, MeshStandardMaterial,Color } from "three";
 import { LifeCycle } from "../types/helpers";
 import { SceneManager } from "../scene.manager";
+import { Ground } from "./ground";
 export class Food implements LifeCycle{
     
     private mesh: Mesh
     private geometry: BoxGeometry
     private material: MeshStandardMaterial
-    private x: number = 4 
-    private z: number = 4
+    public x: number = 4 
+    public z: number = 4
 
 
     constructor(){
@@ -34,6 +35,30 @@ export class Food implements LifeCycle{
 
 
     }
+
+
+    public respawn(mesh: Mesh, tail: Array<Mesh>): void{
+this.x = Math.round(Math.random() * Ground.size - Ground.size / 2)
+this.z = Math.round(Math.random() * Ground.size - Ground.size / 2)
+this.mesh.position.set(this.x,0,this.z);
+
+if(mesh.position.x === this.x && mesh.position.z === this.z)
+{
+    this.respawn(mesh, tail)
+}
+for(const t of tail)
+{
+ 
+    if(t.position.x === this.x && t.position.z === this.z)
+    {
+        this.respawn(mesh, tail)
+    }    
+
+
+}
+
+}
+
 
 public update():void{
 

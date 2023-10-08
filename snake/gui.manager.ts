@@ -3,6 +3,20 @@ import { States } from "./states/states";
 
 export class GUIManager 
 {
+public static score: HTMLParagraphElement = document.createElement('p');
+
+public static createScore(): void{
+    GUIManager.score.style.fontSize = '20px'; 
+    GUIManager.score.style.color = 'white'; 
+    GUIManager.score.style.position = 'fixed'; 
+    GUIManager.score.style.top = '10px'; 
+    GUIManager.score.style.right = '60px'; 
+    GUIManager.score.style.zIndex = '10';
+    GUIManager.score.id = 'score';
+    document.body.appendChild(GUIManager.score); 
+}
+
+
 public static menuButtoms(): void{
     const menu = document.getElementById('menu');
     const credit = document.createElement('button');

@@ -1,0 +1,21 @@
+#victory{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#victory_title{
+font-size: 60px;
+color: aqua;
+margin-bottom: 40px;
+
+
+
+}

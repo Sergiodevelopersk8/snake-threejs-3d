@@ -3,6 +3,7 @@ import { SceneManager } from "./scene.manager";
 import {EffectComposer} from 'three/examples/jsm/postprocessing/EffectComposer';
 import {RenderPass} from 'three/examples/jsm/postprocessing/RenderPass';
 import {UnrealBloomPass} from 'three/examples/jsm/postprocessing/UnrealBloomPass';
+import { GUIManager } from "./gui.manager";
 
 export class RendererManager
 {
@@ -13,11 +14,12 @@ public static canvas:HTMLCanvasElement
 private static composer: EffectComposer
 
 private  constructor(){
-console.log('ejecutado instancia');
+
+    GUIManager.createScore();
     SceneManager.init();   
-RendererManager.init();
-window.addEventListener('resize', RendererManager.resize);
-RendererManager.renderLoop();
+    RendererManager.init();
+    window.addEventListener('resize', RendererManager.resize);
+    RendererManager.renderLoop();
     }
 
 private static init():void{

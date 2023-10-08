@@ -1,4 +1,4 @@
-import {Game} from '../classes/game'
+import {Game} from '../shared/game'
 import { MenuState } from "./menu.state";
 import { State } from "./state";
 
